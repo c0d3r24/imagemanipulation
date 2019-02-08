@@ -16,7 +16,7 @@ class RouterComponent extends Component {
                         component={PhotoGalleryScene}
                         title="Select an image"
                         initial />
-                    <Scene key="imagemanipulation" component={PhotoGalleryScene} />
+                <Scene key="imagemanipulation" component={ImageManipulationScene} back/>
             </Scene>
         </Router>
 

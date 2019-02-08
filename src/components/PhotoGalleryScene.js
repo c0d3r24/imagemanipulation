@@ -1,9 +1,10 @@
 
 import React from 'react';
 import {  FlatList, CameraRoll } from 'react-native';
+import {connect} from 'react-redux';
 import { LinearGradient } from 'expo';
 import PhotoItem from './PhotoItem';
-
+import { set_image } from './../actions';
 class PhotoGalleryScene extends React.Component {
     state = {
         username: '',
@@ -28,8 +29,11 @@ class PhotoGalleryScene extends React.Component {
           .catch((err) => {});
       }
     
+      _selectPhoto = (imgUri) => {
+        this.props.set_image(imgUri);
+      }
       _renderPhoto(photo) {
-        return <PhotoItem photo={photo} />
+        return <PhotoItem photo={photo} selectPhoto={this._selectPhoto} />
       }
       
      render() {
@@ -63,4 +67,4 @@ const styles = {
       fontWeight: '600',
   }
   };
-export default PhotoGalleryScene;
+export default connect(null, {set_image})(PhotoGalleryScene);

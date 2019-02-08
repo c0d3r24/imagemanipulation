@@ -1,3 +1,1 @@
-export const imageOperation  = (imageUrl) => {
-    
-}
+export const SET_IMAGE = 'set_image';

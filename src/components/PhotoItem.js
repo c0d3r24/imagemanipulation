@@ -16,7 +16,7 @@ class PhotoItem extends React.Component{
                 key={image.uri}
                 onPress={() => {
                     if(!this.props.isSelected){
-                        this._addSelection(image,index)
+                        this.props.selectPhoto(image.uri)
                     }
                 }}
                 underlayColor='transparent'
