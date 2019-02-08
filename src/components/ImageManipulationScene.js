@@ -1,17 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 
 
 class ImageManipulationScene extends React.Component {
     render(){
         return(
-        <View>
-        <Image
-        style={{width: 50, height: 50}}
-        source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
-        />
-            <Text>This will show image to manipulate</Text>
+        <View style={{flex:1, justifyContent: 'center', alignItems: 'center',}}>
+            <Image
+            style={{width: 300, height: 300}}
+            source={{uri: this.props.imageURI}}
+            />
+            <View>
+                
+                <TouchableOpacity>
+                        <Text>Rotate</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                        <Text>Flip</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                        <Text>Crop</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                        <Text>resize</Text>
+                </TouchableOpacity>
+                
+            </View>
         </View>
         );
     }

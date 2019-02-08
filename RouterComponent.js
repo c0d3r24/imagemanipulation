@@ -10,13 +10,19 @@ class RouterComponent extends Component {
     render(){return (
 
         <Router>
-            <Scene key="root" >
+            <Scene >
                 <Scene
-                        key="photogallery"
-                        component={PhotoGalleryScene}
-                        title="Select an image"
-                        initial />
-                <Scene key="imagemanipulation" component={ImageManipulationScene} back/>
+                    key="photogallery"
+                    component={PhotoGalleryScene}
+                    title="Select an image"
+                    initial
+                />
+                <Scene
+                    back={true} 
+                    key="imagemanipulation" 
+                    component={ImageManipulationScene}
+                />
+                
             </Scene>
         </Router>
 

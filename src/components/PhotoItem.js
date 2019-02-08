@@ -10,14 +10,13 @@ class PhotoItem extends React.Component{
 
    
     render() {
-            image = this.props.photo.item.node.image;
+            const image = this.props.photo.item.node.image;
+            console.log(image);
         return (
             <TouchableHighlight
                 key={image.uri}
                 onPress={() => {
-                    if(!this.props.isSelected){
-                        this.props.selectPhoto(image.uri)
-                    }
+                    this.props.selectPhoto(image.uri);
                 }}
                 underlayColor='transparent'
             >
