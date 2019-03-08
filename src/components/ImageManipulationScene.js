@@ -2,8 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 
+import {operation} from './../actions'
 
 class ImageManipulationScene extends React.Component {
+    
     render(){
         return(
         <View style={{flex:1, justifyContent: 'center', alignItems: 'center',}}>
@@ -11,9 +13,8 @@ class ImageManipulationScene extends React.Component {
             style={{width: 300, height: 300}}
             source={{uri: this.props.imageURI}}
             />
-            <View>
-                
-                <TouchableOpacity>
+            <View>  
+                <TouchableOpacity onPress={()=> this.props.operation(this.props.imageURI)}>
                         <Text>Rotate</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
@@ -35,4 +36,4 @@ const mapStateToProps = ({image}) => {
     const {imageURI} = image;
     return { imageURI}
 }
-export default connect(mapStateToProps)(ImageManipulationScene);
+export default connect(mapStateToProps,{operation})(ImageManipulationScene);

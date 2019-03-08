@@ -11,7 +11,6 @@ class PhotoItem extends React.Component{
    
     render() {
             const image = this.props.photo.item.node.image;
-            console.log(image);
         return (
             <TouchableHighlight
                 key={image.uri}
